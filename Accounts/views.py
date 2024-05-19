@@ -1,5 +1,11 @@
 from django.shortcuts import render
 
 # Create your views here.
-def login(request):
-    return render(request,"Accounts/login.html")
+def signin(request):
+    return render(request,"Accounts/signin.html")
+
+def signup(request):
+    return render(request,"Accounts/signup.html")
+
+def resetpass(request):
+    return render(request,"Accounts/resetpass.html")
