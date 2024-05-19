@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %} ToDo | List {% endblock title %}
+
+{% block body %}
+    <a href="{% url 'todolist'  %}" ><h4>Add New Task <i class="fas fa-tasks fa-lg text-white me-3"></i></h4></a>
+    <table class="table text-white mb-0 table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Task</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="fw-normal">
+                                        <td class="align-middle">
+                                            <a href=""><span>Call Sam For payments</span></a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <a href="#!" data-mdb-tooltip-init title="Mark as done"><i
+                                                    class="fas fa-times fa-lg text-danger me-3"></i></a>
+                                            <a href="#!" data-mdb-tooltip-init title="Remove"><i
+                                                    class="fas fa-trash-alt fa-lg text-warning"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr class="fw-normal">
+                                        <td class="align-middle">
+                                            <a href=""><span><s>Call Sam For payments</s></span></a>
+                                        </td>
+                                        <td class="align-middle">
+                                            <a href="#!" data-mdb-tooltip-init title="Mark as done"><i
+                                                class="fas fa-check fa-lg text-success me-3"></i></a>
+                                            <a href="#!" data-mdb-tooltip-init title="Remove"><i
+                                                    class="fas fa-trash-alt fa-lg text-warning"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+    </table>
+{% endblock body %}

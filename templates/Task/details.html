@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} ToDo | Details {% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3 mt-3">
+                <label for="taskname" class="form-label">Task:</label>
+                <input type="text" class="form-control" id="taskname" name="taskname">
+            </div>
+            <label for="description">Description:</label>
+            <textarea class="form-control" rows="5" id="description" name="text"></textarea>
+            <div class="form-check mb-3">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="checkbox"> Done
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+            <button type="submit" class="btn btn-danger" value="delete">Delete</button>
+        </form>
+    </div>
+{% endblock body %}

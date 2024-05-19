@@ -9,3 +9,6 @@ def signup(request):
 
 def resetpass(request):
     return render(request,"Accounts/resetpass.html")
+
+def home(request):
+    return render(request,"Accounts/home.html")

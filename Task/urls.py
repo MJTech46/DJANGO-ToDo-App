@@ -17,9 +17,9 @@ Including another URLconf
 from django.urls import path, include
 from . import views
 
+
 urlpatterns = [
-    path('',views.home, name="home"),
-    path('signin/',views.signin, name="signin"),
-    path('signup',views.signup, name="signup"),
-    path('resetpass',views.resetpass, name="resetpass"),
+    path('',views.todolist, name='todolist'),
+    path('details/',views.details, name='details'),
+    path('addtask/',views.addtask, name='addtask'),
 ]

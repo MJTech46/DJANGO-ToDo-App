@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} ToDo | Add Task {% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3 mt-3">
+                <label for="taskname" class="form-label">Task:</label>
+                <input type="text" class="form-control" id="taskname" name="taskname">
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="description">Description:</label>
+                <textarea class="form-control" rows="5" id="description" name="text"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+        </form>
+    </div>
+{% endblock body %}
