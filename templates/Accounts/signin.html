@@ -7,14 +7,14 @@
     {% csrf_token %}
     <!-- Email input -->
     <div data-mdb-input-init class="form-outline mb-4">
-        <input type="text" id="form2Example1" class="form-control" />
-        <label class="form-label" for="form2Example1">User Name</label>
+        <input type="text" id="form2Example1" class="form-control" name="username"/>
+        <label class="form-label" for="form2Example1" >User Name</label>
     </div>
 
     <!-- Password input -->
     <div data-mdb-input-init class="form-outline mb-4">
-        <input type="password" id="form2Example2" class="form-control" />
-        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" id="form2Example2" class="form-control" name="password"/>
+        <label class="form-label" for="form2Example2" >Password</label>
     </div>
 
     <!-- 2 column grid layout for inline styling -->
@@ -27,7 +27,12 @@
             <p>Forgot password? <a href="{% url 'resetpass'  %}">Click here</a></p>
         </div>
     </div>
-
+    {% if message %}
+        <div class="alert alert-danger alert-dismissible fade show">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>Error!</strong> {{ message }}
+        </div>
+    {% endif %}
     <!-- Submit button -->
     <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Signin</button>
 

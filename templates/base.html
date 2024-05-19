@@ -62,14 +62,16 @@
         <div class="col-md-12 col-xl-10">
           <div class="card mask-custom">
             <div class="card-body p-4 text-white">
-              <div class="text-center pt-3 pb-2">
-                <img
-                  src="{% static 'check1.webp' %}"
-                  alt="Check"
-                  width="60"
-                />
-                <h2 class="my-4">To-Do App</h2>
-              </div>
+              <a class="text-white" href="{% url 'home' %}" style="text-decoration: none;">
+                <div class="text-center pt-3 pb-2">
+                  <img
+                    src="{% static 'check1.webp' %}"
+                    alt="Check"
+                    width="60"
+                  />
+                  <h2 class="my-4">To-Do App</h2>
+                </div>
+              </a>
 
               {% block body %} {% endblock body %}
             </div>

@@ -3,37 +3,53 @@
 {% block title %} ToDo | List {% endblock title %}
 
 {% block body %}
-    <a href="{% url 'todolist'  %}" ><h4>Add New Task <i class="fas fa-tasks fa-lg text-white me-3"></i></h4></a>
-    <table class="table text-white mb-0 table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Task</th>
-                                        <th scope="col">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="fw-normal">
-                                        <td class="align-middle">
-                                            <a href=""><span>Call Sam For payments</span></a>
-                                        </td>
-                                        <td class="align-middle">
-                                            <a href="#!" data-mdb-tooltip-init title="Mark as done"><i
-                                                    class="fas fa-times fa-lg text-danger me-3"></i></a>
-                                            <a href="#!" data-mdb-tooltip-init title="Remove"><i
-                                                    class="fas fa-trash-alt fa-lg text-warning"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="fw-normal">
-                                        <td class="align-middle">
-                                            <a href=""><span><s>Call Sam For payments</s></span></a>
-                                        </td>
-                                        <td class="align-middle">
-                                            <a href="#!" data-mdb-tooltip-init title="Mark as done"><i
-                                                class="fas fa-check fa-lg text-success me-3"></i></a>
-                                            <a href="#!" data-mdb-tooltip-init title="Remove"><i
-                                                    class="fas fa-trash-alt fa-lg text-warning"></i></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-    </table>
+    <a href="{% url 'addtask'  %}" ><h4>Add New Task <i class="fas fa-tasks fa-lg text-white me-3"></i></h4></a>
+    {% if  tasklist  %}<!-- checking if the list is empty -->
+        <table class="table text-white mb-0 table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasklist %} <!-- for looping the data -->
+                    <tr class="fw-normal">
+                        <td class="align-middle">
+                            <form action="{% url 'details' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="hidden" name="pk" value="{{ task.pk }}">
+                                <input type="hidden" name="from" value="todolist">
+                                {% if task.status == 0 %}<!-- checking if the task is completed -->
+                                    <button type="submit" class="btn"><span><del>{{ task.name }}</del></span></button><!-- this will shows striked string -->
+                                {% else %}
+                                    <button type="submit" class="btn"><span>{{ task.name }}</span></button><!-- this will shows normal string -->
+                                {% endif %}
+                            </form>
+                        </td>
+                        <td class="align-middle">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="pk" value="{{ task.pk }}">
+                                {% csrf_token %}
+                                {% if task.status == 0 %}
+                                    <!-- this will shows green tick mark -->
+                                    <button type="submit" class="btn" title="Mark as not done" name="action" value="not done"><i class="fas fa-check fa-lg text-success me-3"></i></button>
+                                {% else %}
+                                <!-- this will shows red times mark -->
+                                    <button type="submit" class="btn" title="Mark as done" name="action" value="done"><i class="fas fa-times fa-lg text-danger me-3"></i></button>
+                                {% endif %}
+                                    <button type="submit" class="btn" title="Remove" name="action" value="delete"><i class="fas fa-trash-alt fa-lg text-warning"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}<!-- if the list is empty -->
+    <center>
+        <h4>All Clear</h4>
+        <p>click the "add new task" link for adding a new task</p>
+    </center>
+    {% endif %}
+    
 {% endblock body %}
