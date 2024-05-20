@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} ToDo | Manage Account {% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <h2>welcome back {{ request.user | upper }}!</h2>
+    </div>
+    <div class="container mt-5">
+        <p>Forgot password? wanna Reset it <a href="{% url 'resetpass'  %}">Click here</a></p>
+    </div>
+    <div class="container">
+        <p>Ready to remove your account? <a href="{% url 'removeacc'  %}">Start here</a></p>
+    </div>
+{% endblock body %}

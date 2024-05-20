@@ -3,6 +3,16 @@ from .models import Task
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+def home(request):
+    context={
+            "user":None
+        }
+    if request.user.is_authenticated:
+        context["user"]=request.user
+        
+    return render(request,"Task/home.html", context)
+
+
 @login_required(login_url='signin')
 def todolist(request):
     context = {

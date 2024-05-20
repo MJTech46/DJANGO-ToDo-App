@@ -19,7 +19,7 @@ from . import views
 
 
 urlpatterns = [
-    path('',views.todolist, name='todolist'),
+    path('todolist/',views.todolist, name='todolist'),
     path('details/',views.details, name='details'),
     path('addtask/',views.addtask, name='addtask'),
 ]
