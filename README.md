@@ -7,6 +7,13 @@ Welcome to the Django To-Do App, a simple yet powerful application designed to h
 - **User Account Management**: Create, update, and delete your account with ease.
 - **Task Management**: Create, update, read, mark as done, and delete tasks. Stay organized and keep track of your tasks.
 
+## Screenshots
+Here are some screenshots of the Django To-Do App:
+
+![ToDo-Screenshot (1)](https://github.com/MJTech46/Django-ToDo-App/assets/140804026/e8f5822e-5e09-40ae-bb79-278e3480a2d5)
+![ToDo-Screenshot (2)](https://github.com/MJTech46/Django-ToDo-App/assets/140804026/5d2dd75f-f2df-438e-adbd-fc0405effd44)
+![ToDo-Screenshot (3)](https://github.com/MJTech46/Django-ToDo-App/assets/140804026/9a06d821-2173-4a08-821c-e8d30e4bc94b)
+
 ## Technology Stack
 This application is built with the following technologies:
 - **Frontend**: HTML, CSS, JavaScript
@@ -74,4 +81,4 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ## Contact
 For any queries or suggestions, please feel free to reach out to me.
 
-Thank you for visiting our project. We hope our application helps you manage your tasks efficiently!
+Thank you for visiting my project. I hope my application helps you to manage your tasks efficiently!
