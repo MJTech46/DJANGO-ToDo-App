@@ -49,7 +49,6 @@ def details(request):
     if request.method == "POST" and request.POST.get('from') == "details": #details page post req
         pk=request.POST.get('pk')
         action=request.POST.get('action')
-        print(pk)
         postobj=Task.objects.get(pk=pk)
         if action == "delete":
             postobj.delete()
