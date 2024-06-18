@@ -31,48 +31,72 @@ Before you begin, ensure you have met the following requirements:
 
 ### Installation and Setup
 
-1. **Clone the Repository**
-    - Open your terminal and run the following command to clone the repository:
-    ```bash
-    git clone https://github.com/MJTech46/Django-ToDo-App.git
-    ```
+1.  **Clone the Repository**
 
-2. **Navigate to the Project Directory**
+    - Open your terminal and run the following command structure to clone the repository:
+
+    ```bash
+    git clone https://github.com/username/project_name.git
+    ```
+    - Replace with your target repository link.
+    
+
+2.  **Navigate to the Project Directory**
+
     - Change to the project directory with:
+
     ```bash
-    cd Django-ToDo-App
+    cd project_name
     ```
 
-3. **Create a Virtual Environment**
+  
+
+3.  **Create a Virtual Environment**
+
     - It's recommended to create a virtual environment to keep the dependencies required by different projects separate. To create a virtual environment, run:
+
     ```bash
     python3 -m venv env
     ```
+
     - Activate the virtual environment with:
+
     ```bash
-    source env/bin/activate  # On Windows use `env\Scripts\activate`
+    source env/bin/activate # On Windows use `env\Scripts\activate`
     ```
 
-4. **Install Required Packages**
+  
+
+4.  **Install Required Packages**
+
     - Install all the required packages by running:
+
     ```bash
     pip install -r requirements.txt
     ```
 
-5. **Run Migrations**
+    
+
+5.  **Run Migrations**
+
     - Django uses a SQLite database by default. Run the following command to create the necessary tables:
+
     ```bash
     python manage.py migrate
     ```
 
-6. **Run the Server**
+  
+
+6.  **Run the Server**
+
     - Finally, start the Django server with:
+
     ```bash
     python manage.py runserver
     ```
-    - Open your web browser and visit `http://127.0.0.1:8000/` to see the application running.
 
-Congratulations! You have successfully set up and run the Django ToDo App on your local machine. Enjoy managing your tasks!
+- Open your web browser and visit `http://127.0.0.1:8000/` to see the application running.
+Congratulations! You have successfully set up and run the Django App on your local machine.
 
 
 ## License
