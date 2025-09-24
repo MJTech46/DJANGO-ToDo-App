@@ -1,0 +1,8 @@
+version : "3.9"
+
+services :
+  web :
+    image : "nishika10/todo-app:latest"
+    container_name: django-todo
+    ports :
+     - "8000:8000"

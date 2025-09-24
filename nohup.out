@@ -1,0 +1,5 @@
+Watching for file changes with StatReloader
+[22/Sep/2025 14:52:53] "POST /accounts/signin/ HTTP/1.1" 200 4570
+[22/Sep/2025 14:52:53] "GET /static/check1.webp HTTP/1.1" 304 0
+[22/Sep/2025 14:52:54] "GET /static/favicon.ico HTTP/1.1" 304 0
+[22/Sep/2025 14:52:57] "GET /accounts/signup HTTP/1.1" 200 4506
